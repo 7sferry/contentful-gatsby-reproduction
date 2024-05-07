@@ -28,7 +28,8 @@ const App = ({serverData}: any) => {
 }
 
 export async function getServerData(context: any) {
-    let param = context.params.word;
+    console.log(JSON.stringify(context))
+    let param = context?.params?.word ?? context?.query?.word;
     let r = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + param)
     let dict = await r.json();
 
