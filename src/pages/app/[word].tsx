@@ -23,22 +23,9 @@ const App = ({serverData}: any) => {
                     </li>)
                 })}
             </ul>
-            <div>
-                <Page path="/" page="1"/>
-                <Page path="page/:page"/>
-            </div>
         </div>
     )
 }
-
-const Page = (props: any) => (
-    <div
-        className="page"
-        style={{background: `hsl(${props.page * 75}, 60%, 60%)`}}
-    >
-        {props.page}
-    </div>
-)
 
 export async function getServerData(context: any) {
     let param = context.params.word;
