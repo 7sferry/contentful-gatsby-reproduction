@@ -74,3 +74,4 @@ yarn-error.log
 .now
 *.iml
 test.js
+.vercel
