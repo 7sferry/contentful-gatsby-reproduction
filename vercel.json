@@ -1,4 +1,10 @@
 {
   "version": 2,
+  "rewrites": [
+    {
+      "source": "/app/:word",
+      "destination": "/app/[word]"
+    }
+  ],
   "trailingSlash": false
 }
