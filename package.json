@@ -1,0 +1,89 @@
+{
+  "name": "gatsbyan",
+  "description": "My personal blog powered by Gatsby JS",
+  "version": "2.2.0",
+  "author": "Ferry",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "date-fns": "^3.3.1",
+    "gatsby": "5.13.3",
+    "gatsby-plugin-catch-links": "^5.13.1",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.1",
+    "gatsby-plugin-purgecss": "^6.2.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-sitemap": "^6.13.1",
+    "gatsby-remark-prismjs": "^7.13.1",
+    "gatsby-source-contentful": "8.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "graphql": "^16.8.1",
+    "medium-zoom": "^1.1.0",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1"
+  },
+  "resolutions": {
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.8",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "dotenv": "^16.4.1",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3",
+    "yarn-upgrade-all": "^0.7.2"
+  },
+  "keywords": [
+    "gatsby",
+    "ferry suhandri",
+    "solok",
+    "sumatera barat",
+    "advotics",
+    "jatis",
+    "ix korong",
+    "lubuk sikarah",
+    "software engineer"
+  ],
+  "license": "MIT",
+  "homepage": "https://ferry.vercel.app",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "clean-develop": "gatsby clean && tsc --noEmit && gatsby develop -H 0.0.0.0",
+    "clean-build": "gatsby clean && gatsby build",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
+    "build-serve": "tsc --noEmit && gatsby build && gatsby serve -H 0.0.0.0",
+    "clean-build-serve": "gatsby clean && tsc --noEmit && gatsby build && gatsby serve -H 0.0.0.0",
+    "serve": "gatsby serve -H 0.0.0.0",
+    "clean": "gatsby clean",
+    "disable-telemetry": "gatsby telemetry --disable",
+    "typecheck": "tsc --noEmit",
+    "upgrade-all": "yarn yarn-upgrade-all",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/7sferry/gatsbyan"
+  },
+  "bugs": {
+    "url": "https://github.com/7sferry/gatsbyan/issues"
+  },
+  "packageManager": "yarn@4.1.1",
+  "trustedDependencies": [
+    "contentful",
+    "core-js",
+    "core-js-pure",
+    "es5-ext",
+    "gatsby",
+    "gatsby-cli",
+    "gatsby-telemetry",
+    "lmdb",
+    "msgpackr-extract",
+    "sharp"
+  ]
+}

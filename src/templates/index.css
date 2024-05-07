@@ -1,0 +1,229 @@
+/************************
+ * Author: [MR FERRY™]  *
+ * September 2020       *
+ ************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: Work Sans, Sans-serif, serif;
+}
+
+p,
+.content-post,
+.title {
+    font-family: "Work Sans", Sans-serif, serif;
+}
+
+.medium-zoom-image {
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.main-layout {
+    padding: 0 0 1rem;
+}
+
+.post-container {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+.content-post {
+    font-size: 1.2rem;
+}
+
+.blog-content {
+    padding: 0 2rem;
+}
+
+.page-info {
+    padding: 3px 10px;
+    font-size: 85%;
+}
+
+.title,
+.posted {
+    text-align: center;
+    line-height: 20px;
+}
+
+.posted {
+    padding: 0;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+    font-size: 20px;
+    margin: 0 0 0.25rem;
+}
+
+.text-second-link {
+    color: rgb(81, 212, 233);
+}
+
+.index-main {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    -ms-grid-columns: 1fr 2fr 1fr;
+}
+
+.sidebar {
+    width: 90%;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    border-right: 1px solid #dee2e6 !important;
+}
+
+.post-main {
+    -ms-grid-column: 2;
+    padding: 0 1.5rem 0 0;
+    grid-column: 2;
+    width: 100%;
+}
+
+.tag-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.right-sidebar {
+    -ms-grid-column: 3;
+    grid-column: 3;
+}
+
+.text-link,
+a {
+    color: #8ba2d2;
+    transition: 9s;
+}
+
+.text-link {
+    line-height: 1.25em;
+}
+
+.text-side {
+    color: #42b72a;
+    transition: 9s;
+}
+
+.index-thumbnail {
+    float: left;
+    margin: 0 10px 5px 0;
+    max-width: 250px;
+    max-height: 157px;
+}
+
+a:hover,
+.text-side:hover,
+.text-link:hover {
+    color: #ff0000;
+    transition: 7s;
+}
+
+a,
+a:hover,
+.text-side:hover,
+.text-link:link,
+.text-link:hover,
+.text-link:visited {
+    outline: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    background-color: #1c1e1f;
+    color: #c5c1b9;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2a2c2e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #323537;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #3d4043;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+
+* {
+    scrollbar-color: #2a2c2e #1c1e1f;
+}
+
+/* ipad pro */
+@media only screen and (max-width: 1024px) {
+    .sidebar,
+    .right-sidebar {
+        display: none;
+    }
+
+    .post-main {
+        padding: 0;
+    }
+
+    .index-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .post-container {
+        padding: unset;
+    }
+
+    .blog-content {
+        padding: unset;
+    }
+
+    .index-thumbnail {
+        max-width: 45%;
+        max-height: 200px;
+    }
+}
+
+/* ipad */
+@media only screen and (max-width: 850px) {
+    .post-container {
+        padding: unset;
+    }
+
+    .index-thumbnail {
+        max-width: 45%;
+        max-height: 230px;
+    }
+}
+
+/*!* iphone *!*/
+@media only screen and (max-width: 450px) {
+    .index-thumbnail {
+        max-width: 100%;
+        float: none;
+    }
+}
+
+/* tv */
+@media only screen and (min-width: 2400px) {
+    .index-thumbnail {
+        width: 1200px !important;
+        max-width: 100%;
+        float: none;
+        height: 720px !important;
+        max-height: 100%;
+    }
+}
+
+/* 4k */
+@media only screen and (min-width: 3600px) {
+    .index-thumbnail {
+        width: 2400px !important;
+        max-width: 100%;
+        float: none;
+        height: 1080px !important;
+        max-height: 100%;
+    }
+}
