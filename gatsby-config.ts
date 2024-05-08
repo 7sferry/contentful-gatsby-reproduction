@@ -129,7 +129,6 @@ const gatsbyConfig: GatsbyConfig = {
           // https://w3c.github.io/manifest/#purpose-member
           purpose: `any maskable`,
         },
-        icon: `src/images/avatar.png`, // This path is relative to the root of the site.
         cache_busting_mode: 'none',
         icons: [
           {

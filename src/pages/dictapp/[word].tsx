@@ -21,6 +21,7 @@ const App = (context: any) => {
         getMeanings()
             .then(dict => {
                 if (!dict || dict.length === 0) {
+                    setMeanings(['not found'])
                     return
                 }
                 let dictElement = dict[0];
@@ -34,10 +35,10 @@ const App = (context: any) => {
                 this is a dictionary
             </h1>
             <small>
-                {`${param} means: ${meanings.length > 0 ? '' : `invalid word`}`}
+                {meanings.length > 0 && (meanings[0] !== 'not found' ? `${param} means:` : 'invalid words')}
             </small>
             <ul>
-                {meanings && meanings[0]?.definitions.map((meaning: any) => {
+                {meanings.length > 0 && meanings[0]?.definitions?.map((meaning: any) => {
                     return (<li key={meaning.definition}>
                         {`${meaning.definition}`}
                     </li>)
