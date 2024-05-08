@@ -3,6 +3,9 @@
  * on Mei 2024          *
  ************************/
 
+/**
+ * using ssr static routes
+ */
 import React from "react"
 
 const App = ({serverData}: any) => {

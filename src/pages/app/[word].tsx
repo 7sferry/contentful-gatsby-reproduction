@@ -3,6 +3,9 @@
  * on Mei 2024          *
  ************************/
 
+/**
+ * using ssr param routes
+ */
 import React from "react"
 
 const App = ({serverData}: any) => {
@@ -14,7 +17,7 @@ const App = ({serverData}: any) => {
                 this is a dictionary
             </h1>
             <small>
-                {meanings ? `${serverData.word} means:` : `invalid word`}
+                {`${serverData.word} means: ${meanings?.length > 1 ? '' : `invalid word`}`}
             </small>
             <ul>
                 {meanings && meanings.map((m: any) => m.definitions[0]).map((meaning: any) => {
@@ -28,12 +31,12 @@ const App = ({serverData}: any) => {
 }
 
 export async function getServerData(context: any) {
-    console.log(JSON.stringify(context))
     let param = context?.params?.word ?? context?.query?.word;
     let r = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + param)
     let dict = await r.json();
 
-    let props = r.status !== 200 ? {} : {word: dict[0].word, meanings: dict[0].meanings};
+    let word = param;
+    let props = r.status !== 200 ? {word: word} : {word: word, meanings: dict[0].meanings};
     return {
         status: 200, // The HTTP status code that should be returned
         props: props, // Will be passed to the page component as "serverData" prop

@@ -4,7 +4,7 @@
  ************************/
 
 /**
- * using csr param routes
+ * using dsg/csr param routes
  */
 import React, {useEffect, useState} from "react"
 
@@ -23,7 +23,8 @@ const App = (context: any) => {
                 if (!dict || dict.length === 0) {
                     return
                 }
-                setMeanings(dict[0].meanings)
+                let dictElement = dict[0];
+                setMeanings(dictElement.meanings)
             });
     }, []);
 
@@ -36,7 +37,7 @@ const App = (context: any) => {
                 {`${param} means: ${meanings.length > 1 ? '' : `invalid word`}`}
             </small>
             <ul>
-                {meanings.length > 1 && meanings.map((m: any) => m.definitions[0]).map((meaning: any) => {
+                {meanings && meanings.map((m: any) => m.definitions[0]).map((meaning: any) => {
                     return (<li key={meaning.definition}>
                         {`${meaning.definition}`}
                     </li>)
@@ -44,6 +45,16 @@ const App = (context: any) => {
             </ul>
         </div>
     )
+}
+
+export async function config() {
+    // Optionally use GraphQL here
+
+    return () => {
+        return {
+            defer: true,
+        }
+    }
 }
 
 export default App

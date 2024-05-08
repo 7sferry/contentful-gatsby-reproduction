@@ -3,6 +3,9 @@
  * on Mei 2024          *
  ************************/
 
+/**
+ * using dsg/csr static routes
+ */
 import React, {useEffect, useState} from "react"
 
 const App = () => {

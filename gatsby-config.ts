@@ -3,9 +3,9 @@
  * on January 2021      *
  ************************/
 
-import type { GatsbyConfig } from 'gatsby'
+import type {GatsbyConfig} from 'gatsby'
 import siteConfig from './config'
-import { config } from 'dotenv'
+import {config} from 'dotenv'
 
 config()
 

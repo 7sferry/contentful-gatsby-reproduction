@@ -4,6 +4,14 @@
     {
       "source": "/app/:word",
       "destination": "/app/[word]"
+    },
+    {
+      "source": "/dict/:word",
+      "destination": "/dict/[word]"
+    },
+    {
+      "source": "/dictapp/:word",
+      "destination": "/dictapp/[word]"
     }
   ],
   "trailingSlash": false
