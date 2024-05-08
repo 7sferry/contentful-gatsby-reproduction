@@ -10,22 +10,24 @@ import React, {useEffect, useState} from "react"
 
 const App = (context: any) => {
     let param = context?.params?.word ?? context?.query?.word;
-    const [meanings, setMeanings] = useState([])
+    const [meanings, setMeanings] = useState<any[]>([])
 
     async function getMeanings() {
         let r = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + param)
+        // return await r.json()
         return r.status === 200 ? r.json() : [];
     }
 
     useEffect(() => {
         getMeanings()
-            .then(dict => {
+            .then((dict: any[]) => {
                 if (!dict || dict.length === 0) {
                     return
                 }
                 setMeanings(dict[0].meanings)
             });
     }, []);
+    console.log(meanings)
 
     return (
         <div className="app">
@@ -33,10 +35,10 @@ const App = (context: any) => {
                 this is a dictionary
             </h1>
             <small>
-                {param && meanings.length > 1 && `${param} means: ${meanings.length > 1 ? '' : `invalid word`}`}
+                {meanings.length > 0 && `${param} means: ${meanings.length > 0 ? '' : `invalid word`}`}
             </small>
             <ul>
-                {meanings.length > 1 && meanings.map((m: any) => m.definitions[0]).map((meaning: any) => {
+                {meanings.length > 0 && meanings[0]?.definitions.map((meaning: any) => {
                     return (<li key={meaning.definition}>
                         {`${meaning.definition}`}
                     </li>)

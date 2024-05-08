@@ -17,10 +17,10 @@ const App = ({serverData}: any) => {
                 this is a dictionary
             </h1>
             <small>
-                {`${serverData.word} means: ${meanings?.length > 1 ? '' : `invalid word`}`}
+                {`${serverData.word} means: ${meanings?.length > 0 ? '' : `invalid word`}`}
             </small>
             <ul>
-                {meanings && meanings.map((m: any) => m.definitions[0]).map((meaning: any) => {
+                {meanings && meanings[0]?.definitions.map((meaning: any) => {
                     return (<li key={meaning.definition}>
                         {`${meaning.definition}`}
                     </li>)

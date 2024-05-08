@@ -10,5 +10,11 @@ import {GatsbyFunctionRequest, GatsbyFunctionResponse} from "gatsby";
 
 export default function handler(req: GatsbyFunctionRequest<any>,
                                 res: GatsbyFunctionResponse) {
-    res.json({title: `I am TYPESCRIPT`, req: JSON.stringify(req)})
+    res.json({
+        title: `I am TYPESCRIPT`,
+        cookies: JSON.stringify(req.cookies),
+        params: JSON.stringify(req.params),
+        query: JSON.stringify(req.query)
+        // req: JSON.stringify(req)
+    })
 }
