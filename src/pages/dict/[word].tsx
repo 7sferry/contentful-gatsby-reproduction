@@ -35,7 +35,7 @@ const App = (context: any) => {
                 this is a dictionary
             </h1>
             <small>
-                {meanings.length > 0 && `${param} means: ${meanings.length > 0 ? '' : `invalid word`}`}
+                {param && `${param} means: ${meanings.length > 0 ? '' : `invalid word`}`}
             </small>
             <ul>
                 {meanings.length > 0 && meanings[0]?.definitions.map((meaning: any) => {
